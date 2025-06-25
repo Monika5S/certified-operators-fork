@@ -11,3 +11,6 @@
 # FBC related
 bin/
 .catalog_cache
+
+ssh-secret.yml
+templates/
