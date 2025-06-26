@@ -15,6 +15,7 @@ LABEL com.redhat.openshift.versions='v4.10'
 LABEL com.redhat.openshift.versions='v4.10'
 LABEL com.redhat.openshift.versions='v4.10'
 LABEL com.redhat.openshift.versions='v4.10'
+LABEL com.redhat.openshift.versions='v4.10'
 
 COPY manifests/ /manifests/
 COPY metadata/ /metadata/
