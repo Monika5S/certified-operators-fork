@@ -12,6 +12,7 @@ LABEL operators.operatorframework.io.metrics.project_layout='go.kubebuilder.io/v
 LABEL operators.operatorframework.io.test.mediatype.v1='scorecard+v1'
 LABEL operators.operatorframework.io.test.config.v1='tests/scorecard/'
 LABEL com.redhat.openshift.versions='v4.10'
+LABEL com.redhat.openshift.versions='v4.10'
 
 COPY manifests/ /manifests/
 COPY metadata/ /metadata/
