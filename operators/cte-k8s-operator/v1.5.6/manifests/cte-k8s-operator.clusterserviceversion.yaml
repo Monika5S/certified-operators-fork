@@ -576,6 +576,8 @@ spec:
                     - ALL
               securityContext:
                 runAsNonRoot: true
+              imagePullSecrets:
+                  - name: rh-kube-proxy-secret
               serviceAccountName: cte-k8s-operator-controller-manager
               terminationGracePeriodSeconds: 10
               volumes:
