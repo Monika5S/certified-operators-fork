@@ -556,7 +556,7 @@ spec:
                 - --upstream=http://127.0.0.1:8080/
                 - --logtostderr=true
                 - --v=0
-                image: registry.redhat.io/openshift4/ose-kube-rbac-proxy-rhel9@sha256:04f726950994cf771db922c76baf409dce335ff55e031d9b7877ad6163195446
+                image: registry.redhat.io/openshift4/ose-kube-rbac-proxy-rhel9:v4.17.0-202503121206.p0.g7718265.assembly.stream.el9
                 name: kube-rbac-proxy
                 ports:
                 - containerPort: 8443
@@ -576,8 +576,6 @@ spec:
                     - ALL
               securityContext:
                 runAsNonRoot: true
-              imagePullSecrets:
-                  - name: rh-kube-proxy-secret
               serviceAccountName: cte-k8s-operator-controller-manager
               terminationGracePeriodSeconds: 10
               volumes:
