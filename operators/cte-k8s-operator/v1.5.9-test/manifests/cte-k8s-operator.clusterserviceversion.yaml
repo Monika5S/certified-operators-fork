@@ -44,7 +44,7 @@ metadata:
         }
       ]
     capabilities: Seamless Upgrades
-    createdAt: "2025-03-30T21:46:38Z"
+    createdAt: "2024-12-05T18:52:12Z"
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
     features.operators.openshift.io/csi: "true"
@@ -60,7 +60,7 @@ metadata:
   labels:
     operatorframework.io/arch.amd64: supported
     operatorframework.io/arch.arm64: supported
-  name: cte-k8s-operator.v1.5.6
+  name: cte-k8s-operator.v1.5.2
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -397,13 +397,6 @@ spec:
         - apiGroups:
           - ""
           resources:
-          - configmaps
-          verbs:
-          - get
-          - list
-        - apiGroups:
-          - ""
-          resources:
           - events
           verbs:
           - create
@@ -517,7 +510,7 @@ spec:
                 - --leader-elect
                 command:
                 - /manager
-                image: docker.io/thalesciphertrust/ciphertrust-transparent-encryption-kubernetes-operator:v1.5.6
+                image: docker.io/thalesciphertrust/ciphertrust-transparent-encryption-kubernetes-operator:v1.5.2
                 livenessProbe:
                   httpGet:
                     path: /healthz
@@ -556,7 +549,7 @@ spec:
                 - --upstream=http://127.0.0.1:8080/
                 - --logtostderr=true
                 - --v=0
-                image: registry.redhat.io/openshift4/ose-kube-rbac-proxy-rhel9@sha256:04f726950994cf771db922c76baf409dce335ff55e031d9b7877ad6163195446
+                image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.0
                 name: kube-rbac-proxy
                 ports:
                 - containerPort: 8443
@@ -576,8 +569,6 @@ spec:
                     - ALL
               securityContext:
                 runAsNonRoot: true
-              imagePullSecrets:
-                  - name: rh-kube-proxy-secret
               serviceAccountName: cte-k8s-operator-controller-manager
               terminationGracePeriodSeconds: 10
               volumes:
@@ -644,7 +635,7 @@ spec:
   provider:
     name: Thales CPL DIS
     url: https://cpl.thalesgroup.com/data-protection
-  version: 1.5.6
+  version: 1.5.2
   webhookdefinitions:
   - admissionReviewVersions:
     - v1
